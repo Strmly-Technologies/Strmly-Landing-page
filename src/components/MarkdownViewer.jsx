@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import { FaBars, FaTimes } from 'react-icons/fa';
 // Import the markdown content as strings
 import { privacyPolicyContent, termsAndConditionsContent } from '../utils/markdownContent';
 
@@ -8,6 +9,7 @@ const MarkdownViewer = () => {
   const [content, setContent] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { type } = useParams();
   
   useEffect(() => {
@@ -36,6 +38,10 @@ const MarkdownViewer = () => {
     fetchMarkdown();
   }, [type]);
   
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+  
   return (
     <div className="min-h-screen bg-black text-white relative">
       {/* Modern grid background */}
@@ -53,30 +59,62 @@ const MarkdownViewer = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-black opacity-80"></div>
       </div>
       
-      <div className="relative z-10 container mx-auto px-4 py-12">
+      <div className="relative z-10 container mx-auto px-4 py-8 md:py-12">
         {/* Header */}
-        <div className="flex justify-between items-center mb-12">
-          <Link to="/" className="flex items-center space-x-4 group">
-            <div className="w-12 h-12 flex items-center justify-center bg-white/5 backdrop-blur-sm rounded-xl border border-gray-700/30 group-hover:border-gray-500/50 transition-all duration-300">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 space-y-4 md:space-y-0">
+          <Link to="/" className="flex items-center space-x-2 md:space-x-4 group">
+            <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-white/5 backdrop-blur-sm rounded-xl border border-gray-700/30 group-hover:border-gray-500/50 transition-all duration-300">
               <img 
                 src="https://cdn-icons-png.flaticon.com/512/153/153194.png"
                 alt="Paperclip"
-                className="w-7 h-7 filter invert opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                className="w-5 h-5 md:w-7 md:h-7 filter invert opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
               />
             </div>
-            <span className="text-2xl font-bold tracking-wide text-white group-hover:text-gray-200 transition-colors duration-200">
+            <span className="text-xl md:text-2xl font-bold tracking-wide text-white group-hover:text-gray-200 transition-colors duration-200">
               STRMLY
             </span>
           </Link>
           
-          <Link to="/" className="px-5 py-2.5 text-sm border border-gray-700 rounded-lg font-medium text-gray-300 hover:text-white hover:border-gray-500 transition-all duration-300 hover:bg-white/5">
-            Back to Home
-          </Link>
+          <div className="flex items-center space-x-2">
+            <Link to="/" className="px-4 py-2 md:px-5 md:py-2.5 text-sm border border-gray-700 rounded-lg font-medium text-gray-300 hover:text-white hover:border-gray-500 transition-all duration-300 hover:bg-white/5">
+              Back to Home
+            </Link>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden flex items-center justify-center w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-700/30 hover:bg-white/10 transition-all"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {mobileMenuOpen ? (
+                <FaTimes className="w-4 h-4 text-gray-300" />
+              ) : (
+                <FaBars className="w-4 h-4 text-gray-300" />
+              )}
+            </button>
+          </div>
         </div>
         
+        {/* Mobile Navigation Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mb-6 bg-gray-900/90 backdrop-blur-md border border-gray-700/50 rounded-lg p-2 animate-fade-in-up">
+            <div className="py-2">
+              <Link to="/" className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors">
+                Home
+              </Link>
+              <Link to="/legal/privacy" className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/legal/terms" className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
+          </div>
+        )}
+        
         {/* Content */}
-        <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 rounded-xl p-8 max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-8 pb-4 border-b border-gray-700/50">
+        <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 rounded-xl p-4 md:p-8 max-w-4xl mx-auto">
+          <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 pb-4 border-b border-gray-700/50">
             {type === 'privacy' ? 'Privacy Policy' : 'Terms and Conditions'}
           </h1>
           
@@ -86,18 +124,18 @@ const MarkdownViewer = () => {
             </div>
           ) : error ? (
             <div className="text-red-400 py-8 text-center">
-              <p className="mb-4 text-xl">Error loading content</p>
-              <p>{error}</p>
+              <p className="mb-4 text-lg md:text-xl">Error loading content</p>
+              <p className="text-sm md:text-base">{error}</p>
             </div>
           ) : (
-            <div className="markdown-content prose prose-invert prose-sm md:prose-base max-w-none">
+            <div className="markdown-content prose prose-invert prose-sm md:prose-base max-w-none text-sm md:text-base">
               <ReactMarkdown>{content}</ReactMarkdown>
             </div>
           )}
         </div>
         
         {/* Footer */}
-        <div className="text-center text-gray-500 text-sm mt-12">
+        <div className="text-center text-gray-500 text-xs md:text-sm mt-8 md:mt-12">
           © {new Date().getFullYear()} STRMLY. All rights reserved.
         </div>
       </div>
@@ -106,4 +144,3 @@ const MarkdownViewer = () => {
 };
 
 export default MarkdownViewer;
-     
