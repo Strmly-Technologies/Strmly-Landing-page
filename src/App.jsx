@@ -144,7 +144,7 @@ const StrmlyLanding = () => {
       <section className={`relative z-10 px-8  ${mounted ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1s' }}>
         <div className="flex justify-center items-center space-x-24">
           {/* MSME Recognition with Larger Logo */}
-          <div className="text-center group cursor-pointer">
+          <div className="text-center group cursor-pointer" onClick={(e) => handleLinkClick(e, 'MSME')}>
             <div className="w-44 h-44 mx-auto mb-5 flex items-center justify-center bg-white/5 backdrop-blur-sm rounded-xl border border-gray-700/30 group-hover:border-gray-500/50 transition-all duration-300 group-hover:scale-105">
               <img 
                 src="/msme-logo.png" 
