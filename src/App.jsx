@@ -124,7 +124,6 @@ const StrmlyLanding = () => {
       </header>
 
 {/* Mobile Navigation Dropdown */}
-{/* Mobile Navigation Dropdown */}
 <div 
   className={`md:hidden fixed top-0 right-0 h-screen w-full z-40 ${
     mobileMenuOpen ? 'block' : 'hidden'
