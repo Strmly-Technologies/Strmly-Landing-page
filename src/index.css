@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes circularGlow {
+  0% {
+    box-shadow: 
+      0 0 0 0 rgba(209, 213, 219, 0.7),
+      0 0 0 10px rgba(209, 213, 219, 0.0);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 5px rgba(209, 213, 219, 0.0),
+      0 0 0 15px rgba(156, 163, 175, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 0 0 0 rgba(156, 163, 175, 0.0),
+      0 0 0 20px rgba(156, 163, 175, 0.0);
+  }
+}
+
+@keyframes rotatingGradientBorder {
+  0% {
+    background: conic-gradient(from 0deg, #e5e7eb, #6b7280, #e5e7eb, transparent, transparent);
+  }
+  100% {
+    background: conic-gradient(from 360deg, #e5e7eb, #6b7280, #e5e7eb, transparent, transparent);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.gradient-border-button {
+  position: relative;
+  background: black;
+  border-radius: 12px;
+  padding: 2px;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: conic-gradient(from 0deg, #e5e7eb, #6b7280, #e5e7eb, #6b7280);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: rotatingGradientBorder 3s linear infinite;
+  z-index: -1;
+}
+
+.gradient-border-button:hover::before {
+  animation: rotatingGradientBorder 1s linear infinite;
+}
+
+.gradient-border-button .button-content {
+  background: black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.large-gradient-border-button {
+  position: relative;
+  background: black;
+  border-radius: 16px;
+  padding: 3px;
+  transition: all 0.3s ease;
+}
+
+.large-gradient-border-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 3px;
+  background: conic-gradient(from 0deg, #e5e7eb, #6b7280, #d1d5db, #e5e7eb, #6b7280);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: rotatingGradientBorder 4s linear infinite;
+  z-index: -1;
+}
+
+.large-gradient-border-button:hover::before {
+  animation: rotatingGradientBorder 1.5s linear infinite;
+}
+
+.large-gradient-border-button .button-content {
+  background: black;
+  border-radius: 13px;
+  padding: 16px 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.text-gradient-black-white {
+  background: linear-gradient(135deg, #374151, #f9fafb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
