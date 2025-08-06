@@ -13,7 +13,7 @@ const CertificateViewer = () => {
     
     // Define the images based on certificate type
     if (type === 'msme') {
-      setImages(['/Udyam Registration Certificate-1-2_page-0001.jpg','Udyam Registration Certificate-1-2_page-0002.jpg']);
+      setImages(['/Udyam Registration Certificate-1-2_page-0001.jpg','/Udyam Registration Certificate-1-2_page-0002.jpg']);
     } else if (type === 'dpiit') {
       setImages(['/DPIIT Startup Certificate_page-0001.jpg']);
     } else {
