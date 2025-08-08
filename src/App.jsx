@@ -204,11 +204,11 @@ const StrmlyLanding = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 justify-items-center max-w-6xl mx-auto">
           {/* MSME Recognition with Larger Logo */}
           <div className="text-center group cursor-pointer w-full max-w-xs" onClick={(e) => handleLinkClick(e, 'MSME')}>
-            <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-44 md:h-44 mx-auto mb-4 md:mb-5 flex items-center justify-center bg-white/5 backdrop-blur-sm rounded-xl border border-gray-700/30 group-hover:border-gray-500/50 transition-all duration-300 group-hover:scale-105">
+            <div className="w-28 h-28  sm:w-32 sm:h-32 md:w-44 md:h-44 mx-auto mb-4 md:mb-5 flex items-center justify-center bg-white/5 backdrop-blur-sm rounded-xl border border-gray-700/30 group-hover:border-gray-500/50 transition-all duration-300 group-hover:scale-105">
               <img 
-                src="/msme-logo.png" 
+                src="/IMG_2143.png" 
                 alt="MSME Logo"
-                className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-md object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
+                className="w-24 h-64 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-md object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
               />
             </div>
             <p className="text-sm md:text-sm text-gray-400 group-hover:text-white transition-colors px-2">
@@ -221,7 +221,7 @@ const StrmlyLanding = () => {
           <div className="text-center group cursor-pointer w-full max-w-xs" onClick={(e) => handleLinkClick(e, 'DPIIT')}>
             <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-44 md:h-44 mx-auto mb-4 md:mb-5 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-700/30 group-hover:border-gray-500/50 transition-all duration-300 flex items-center justify-center group-hover:scale-105">
               <img 
-                src="/dpiit-logo.png" 
+                src="/IMG_2109.png" 
                 alt="DPIIT Logo"
                 className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-md object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
               />
@@ -236,7 +236,7 @@ const StrmlyLanding = () => {
           <div className="text-center group cursor-pointer w-full max-w-xs sm:col-span-2 md:col-span-1">
             <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-44 md:h-44 mx-auto mb-4 md:mb-5 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-700/30 group-hover:border-gray-500/50 transition-all duration-300 flex items-center justify-center group-hover:scale-105">
               <img 
-                src="/made-in-india-logo.png" 
+                src="/IMG_2110.png" 
                 alt="Made in India Logo"
                 className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-md object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
               />
