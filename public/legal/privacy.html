@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - STRMLY</title>
+    <link rel="icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Header styles */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(107, 114, 128, 0.3);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            filter: invert(1);
+            opacity: 0.8;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* Content styles */
+        .markdown-content {
+            padding: 1rem 0;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(107, 114, 128, 0.3);
+        }
+
+        .markdown-content h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .markdown-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #9ca3af;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #9ca3af;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .markdown-content a {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid #4b5563;
+            padding-left: 1rem;
+            font-style: italic;
+            margin: 1rem 0;
+        }
+
+        .markdown-content code {
+            background-color: rgba(75, 85, 99, 0.3);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+
+        .markdown-content pre {
+            background-color: rgba(31, 41, 55, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .markdown-content hr {
+            margin: 2rem 0;
+            border: 0;
+            height: 1px;
+            background-color: rgba(75, 85, 99, 0.3);
+        }
+
+        .footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(75, 85, 99, 0.3);
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Grid background */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.1;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -2;
+            background: linear-gradient(to bottom right, #111827, #000, #000);
+            opacity: 0.8;
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .markdown-content h1 {
+                font-size: 1.5rem;
+            }
+            
+            .markdown-content h2 {
+                font-size: 1.25rem;
+            }
+            
+            .markdown-content h3 {
+                font-size: 1.125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-gradient"></div>
+    
+    <div class="container">
+        <header class="header">
+            <a href="/" class="logo-container">
+                <div class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/153/153194.png" alt="Strmly Logo">
+                </div>
+                <span class="logo-text">STRMLY</span>
+            </a>
+        </header>
+        
+        <div class="markdown-content">
+            <h1>Privacy Policy for STRMLY Technologies.Pvt.Ltd</h1>
+            <p><strong>Last updated:</strong> July 30, 2025</p>
+            
+            <hr>
+            
+            <h2>1. Introduction</h2>
+            <p>At <strong>Strmly</strong>, your privacy is very important to us. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you use our services through our mobile app and website (the "Service").<br>
+            By accessing or using the Service, you consent to the practices described in this Policy.</p>
+            
+            <hr>
+            
+            <h2>2. Information We Collect</h2>
+            
+            <h3>Personal Information</h3>
+            <ul>
+                <li>Name, username, email address, mobile number</li>
+                <li>Profile photo and bio (if provided)</li>
+            </ul>
+            
+            <h3>Content & Usage Information</h3>
+            <ul>
+                <li>Videos uploaded, comments, likes, shares, reports</li>
+                <li>Viewing history, search queries, watch time, interaction logs</li>
+            </ul>
+            
+            <h3>Device & Technical Data</h3>
+            <ul>
+                <li>Device type, operating system, app version</li>
+                <li>IP address, browser type, language, crash logs</li>
+                <li>Unique device identifiers and advertising IDs</li>
+            </ul>
+            
+            <h3>Location Data</h3>
+            <ul>
+                <li>Approximate or precise location (if permission is granted)</li>
+            </ul>
+            
+            <h3>Payment Information</h3>
+            <ul>
+                <li>We may collect limited transaction details through third-party payment processors (e.g., Razorpay, Stripe, UPI)</li>
+                <li>We do <strong>not</strong> store your card, UPI, or bank account details on our servers</li>
+            </ul>
+            
+            <h3>Third-Party SDK & Analytics</h3>
+            <ul>
+                <li>We use SDKs (e.g., Firebase, Google Analytics, OneSignal) for performance, analytics, and crash reporting. These tools may collect device identifiers and app usage.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>3. How We Use Your Information</h2>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Deliver and improve our services and recommendations</li>
+                <li>Facilitate uploads, subscriptions, live streaming, and purchases</li>
+                <li>Personalize content and in-app advertisements</li>
+                <li>Respond to your queries and provide support</li>
+                <li>Monitor for fraud, abuse, and security threats</li>
+                <li>Comply with legal obligations and enforce our Terms of Service</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>4. Legal Basis for Processing (As per Indian Law)</h2>
+            <p>We process your personal data based on:</p>
+            <ul>
+                <li>Your explicit <strong>consent</strong> (e.g., for accessing your camera, location, or payment info)</li>
+                <li><strong>Contractual necessity</strong> (e.g., account creation, subscriptions)</li>
+                <li><strong>Legal obligations</strong> (e.g., for tax compliance or regulatory disclosures)</li>
+                <li><strong>Legitimate interest</strong> (e.g., platform improvement, analytics)</li>
+            </ul>
+            <p>You may withdraw your consent at any time by adjusting your settings or contacting us.</p>
+            
+            <hr>
+            
+            <h2>5. Sharing Your Information</h2>
+            <p>We may share your data with:</p>
+            <ul>
+                <li><strong>Other users</strong> (e.g., your public videos, comments, username, profile photo)</li>
+                <li><strong>Service providers</strong> who help us operate and maintain the platform (e.g., cloud hosting, analytics, payment processing)</li>
+                <li><strong>Legal and government authorities</strong> if required under applicable laws</li>
+            </ul>
+            <p>We <strong>do not sell</strong> your personal information.</p>
+            
+            <hr>
+            
+            <h2>6. Your Rights & Choices</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access, correct, or delete</strong> your personal data</li>
+                <li><strong>Withdraw consent</strong> for data collection</li>
+                <li><strong>Restrict or object</strong> to certain processing</li>
+                <li><strong>Disable location access</strong> or other permissions in your device settings</li>
+                <li><strong>Opt out</strong> of marketing emails or push notifications</li>
+            </ul>
+            <p>To make such requests, contact our <strong>Grievance Officer</strong> listed below.</p>
+            
+            <hr>
+            
+            <h2>7. App Permissions (Android)</h2>
+            <p>We may request the following permissions:</p>
+            <ul>
+                <li><strong>Camera & Microphone</strong> – for video recording and live streaming</li>
+                <li><strong>Storage</strong> – for saving or uploading media files</li>
+                <li><strong>Location</strong> – for localizing recommendations and content (optional)</li>
+            </ul>
+            <p>You can change or revoke these permissions in your device settings at any time.</p>
+            
+            <hr>
+            
+            <h2>8. Data Retention</h2>
+            <p>We retain your personal data only for as long as:</p>
+            <ul>
+                <li>Necessary to provide the services and fulfill your transactions</li>
+                <li>Required under applicable laws (e.g., tax or compliance obligations)</li>
+                <li>Needed to resolve disputes or enforce agreements</li>
+            </ul>
+            <p>If you request deletion of your account, we will remove your personal information, subject to legal retention periods.</p>
+            
+            <hr>
+            
+            <h2>9. Children's Privacy</h2>
+            <p>Strmly is <strong>not intended for users under the age of 13</strong>. We do not knowingly collect personal data from children. If we become aware that we have collected such information, we will delete it immediately.</p>
+            
+            <hr>
+            
+            <h2>10. International Data Transfers</h2>
+            <p>Your data may be stored or processed in data centers outside India. Regardless of where it is processed, we apply the same standards of data protection as described in this policy.</p>
+            
+            <hr>
+            
+            <h2>11. Data Security</h2>
+            <p>We use reasonable physical, electronic, and managerial safeguards to protect your data:</p>
+            <ul>
+                <li>HTTPS encryption</li>
+                <li>Secure password hashing</li>
+                <li>Firewalls and access controls</li>
+            </ul>
+            <p>However, no system is 100% secure. Keep your password confidential and avoid sharing sensitive information in public areas of the app.</p>
+            
+            <hr>
+            
+            <h2>12. Grievance Officer (India Compliance)</h2>
+            <p>In compliance with Rule 5(9) of the IT Rules 2011 and Section 13 of the DPDP Act, please contact:</p>
+            <p><strong>Name:</strong> Rishab Raj<br>
+            <strong>Email:</strong> team@strmly.com<br>
+            <strong>Response Time:</strong> Within 15 working days</p>
+            
+            <hr>
+            
+            <h2>13. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. If material changes are made, we will notify you via app notification or email. The "Last updated" date at the top reflects the latest version.</p>
+            
+            <hr>
+            
+            <h2>14. Contact Us</h2>
+            <p>If you have any questions or complaints regarding this Privacy Policy or your data, please contact us at:</p>
+            <p><strong>Email:</strong> team@strmly.com</p>
+        </div>
+        
+        <footer class="footer">
+            <p>© 2025 STRMLY Technologies Pvt. Ltd. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
