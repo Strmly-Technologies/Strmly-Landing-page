@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - STRMLY</title>
+    <link rel="icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Header styles */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(107, 114, 128, 0.3);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            filter: invert(1);
+            opacity: 0.8;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* Content styles */
+        .markdown-content {
+            padding: 1rem 0;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(107, 114, 128, 0.3);
+        }
+
+        .markdown-content h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .markdown-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #9ca3af;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #9ca3af;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .markdown-content a {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid #4b5563;
+            padding-left: 1rem;
+            font-style: italic;
+            margin: 1rem 0;
+        }
+
+        .markdown-content code {
+            background-color: rgba(75, 85, 99, 0.3);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+
+        .markdown-content pre {
+            background-color: rgba(31, 41, 55, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .markdown-content hr {
+            margin: 2rem 0;
+            border: 0;
+            height: 1px;
+            background-color: rgba(75, 85, 99, 0.3);
+        }
+
+        .acceptance {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(75, 85, 99, 0.5);
+            border-radius: 0.75rem;
+            background-color: rgba(31, 41, 55, 0.3);
+        }
+
+        .acceptance-checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .acceptance-checkbox input {
+            margin-right: 0.75rem;
+        }
+
+        .acceptance-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .accept-button {
+            background-color: #4b5563;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .accept-button:hover {
+            background-color: #6b7280;
+        }
+
+        .decline-button {
+            background-color: transparent;
+            color: #9ca3af;
+            border: 1px solid #4b5563;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .decline-button:hover {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        .footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(75, 85, 99, 0.3);
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Grid background */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.1;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -2;
+            background: linear-gradient(to bottom right, #111827, #000, #000);
+            opacity: 0.8;
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .markdown-content h1 {
+                font-size: 1.5rem;
+            }
+            
+            .markdown-content h2 {
+                font-size: 1.25rem;
+            }
+            
+            .markdown-content h3 {
+                font-size: 1.125rem;
+            }
+            
+            .acceptance-buttons {
+                flex-direction: column;
+            }
+            
+            .accept-button, .decline-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-gradient"></div>
+    
+    <div class="container">
+        <header class="header">
+            <a href="/" class="logo-container">
+                <div class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/153/153194.png" alt="Strmly Logo">
+                </div>
+                <span class="logo-text">STRMLY</span>
+            </a>
+        </header>
+        
+        <div class="markdown-content">
+            <h1>TERMS AND CONDITIONS FOR STRMLY Technologies.Pvt.Ltd</h1>
+            <p><strong>Last Updated: July 30, 2025</strong></p>
+            
+            <hr>
+            
+            <h2>1. ACCEPTANCE OF TERMS</h2>
+            <p>By downloading, installing, accessing, or using the Strmly mobile application ("App"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+            
+            <hr>
+            
+            <h2>2. DESCRIPTION OF SERVICE</h2>
+            <p>Strmly is a video streaming and content creation platform that allows users to:</p>
+            <ul>
+                <li>Upload, share, and view video content</li>
+                <li>Create and join communities</li>
+                <li>Purchase and sell video series and individual videos</li>
+                <li>Use creator passes for subscription-based content access</li>
+                <li>Send tips and gifts to content creators</li>
+                <li>Manage digital wallets for transactions</li>
+                <li>Access premium content through paid subscriptions</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>3. ELIGIBILITY AND AGE REQUIREMENTS</h2>
+            <ul>
+                <li>You must be at least <strong>13 years old</strong> to use this App.</li>
+                <li>Users between 13-17 must have <strong>parental consent</strong>.</li>
+                <li>Users must be at least <strong>18 years old</strong> to access monetization features, make purchases, or receive payments.</li>
+                <li>By using the App, you represent that you meet these age requirements.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>4. USER ACCOUNTS AND REGISTRATION</h2>
+            
+            <h3>4.1 Account Creation</h3>
+            <ul>
+                <li>You must provide accurate, current, and complete information during registration.</li>
+                <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+                <li>You may register using email/password or Google OAuth.</li>
+                <li>Email verification is required before accessing full App features.</li>
+                <li>By signing up or creating an account, you agree to <strong>share the required details with us, such as your email and password, for app functionality and account management.</strong></li>
+            </ul>
+            
+            <h3>4.2 Account Security</h3>
+            <ul>
+                <li>You are responsible for all activities under your account.</li>
+                <li>Notify us immediately of any unauthorized access.</li>
+                <li>We may suspend or terminate accounts that violate these Terms.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>5. USER-GENERATED CONTENT</h2>
+            
+            <h3>5.1 Content Guidelines</h3>
+            <p>You agree not to upload, post, or share content that:</p>
+            <ul>
+                <li>Is illegal, harmful, threatening, abusive, or defamatory.</li>
+                <li>Contains nudity, sexual content, or is inappropriate for minors.</li>
+                <li>Violates intellectual property rights.</li>
+                <li>Contains malware, viruses, or harmful code.</li>
+                <li>Promotes violence, hate speech, or discrimination.</li>
+                <li>Is spam, misleading, or fraudulent.</li>
+            </ul>
+            
+            <h3>5.2 Content Ownership and Licensing</h3>
+            <ul>
+                <li>You retain ownership of content you create and upload.</li>
+                <li>By uploading content, you grant Strmly a worldwide, non-exclusive license to host, display, and distribute your content.</li>
+                <li>You represent that you have all necessary rights to the content you upload.</li>
+                <li>We may remove content that violates these Terms without notice.</li>
+            </ul>
+            
+            <h3>5.3 Content Moderation</h3>
+            <ul>
+                <li>We reserve the right to review, moderate, and remove content.</li>
+                <li>Content may be automatically or manually reviewed for compliance.</li>
+                <li>Repeated violations may result in account suspension or termination.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>6. MONETIZATION AND PAYMENTS</h2>
+            
+            <h3>6.1 Digital Wallet System</h3>
+            <ul>
+                <li>Users can load money into their digital wallets using a payment gateway.</li>
+                <li>Wallet funds can be used to purchase content, send tips, or pay community fees.</li>
+                <li>All transactions are processed securely through our payment partners.</li>
+                <li>Strmly reserves the right to <strong>restrict, block, or remove digital wallet rights</strong> for users who violate the App's rules and Terms.</li>
+            </ul>
+            
+            <h3>6.2 Creator Monetization</h3>
+            <ul>
+                <li>Creators can earn money through:
+                    <ul>
+                        <li>Paid video series and individual videos</li>
+                        <li>Creator Pass subscriptions (monthly recurring)</li>
+                        <li>Community membership fees (monthly recurring)</li>
+                        <li>Tips and gifts from viewers</li>
+                        <li>Comment monetization features</li>
+                    </ul>
+                </li>
+                <li>An option will be provided to users to select whether they want to <strong>monetize their comments</strong>.</li>
+            </ul>
+            
+            <h3>6.3 Revenue Sharing</h3>
+            <ul>
+                <li>Any revenue generated through the App will be subject to a <strong>70/30 split, with creators receiving 70% of the revenue and Strmly retaining 30%.</strong></li>
+                <li>Additionally, <strong>Google Play charges will be applicable</strong> wherever deemed necessary for compliance with Android policies.</li>
+                <li>Community founders receive revenue based on their community settings.</li>
+                <li>All fees are clearly disclosed before transactions.</li>
+            </ul>
+            
+            <h3>6.4 Withdrawals</h3>
+            <ul>
+                <li>Creators must verify their bank account or UPI details to withdraw funds.</li>
+                <li>Minimum withdrawal amounts and processing times apply.</li>
+                <li>We may hold funds for security and fraud prevention.</li>
+                <li>When a creator publishes a video series, they must <strong>commit to a specified number of episodes</strong> as part of that series. Until the committed number of episodes is delivered, any revenue earned through the series will <strong>not be sent to their wallet but will be locked by the App.</strong></li>
+            </ul>
+            
+            <h3>6.5 Refund Policy</h3>
+            <ul>
+                <li>Digital content purchases are generally non-refundable.</li>
+                <li>Refunds may be considered for technical issues or unauthorized transactions.</li>
+                <li>Subscription cancellations take effect at the end of the current billing period.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>7. SUBSCRIPTION SERVICES</h2>
+            
+            <h3>7.1 Creator Pass Subscriptions</h3>
+            <ul>
+                <li>Monthly subscriptions providing access to all content from specific creators.</li>
+                <li>Auto-renewal unless canceled by user.</li>
+                <li>30-day access period from purchase date.</li>
+                <li>If a creator chooses to discontinue/delete a Creator Pass, they must <strong>wait for a period of 45 days</strong> before the pass can be permanently deleted. During this 45-day period, no new users can purchase the pass, but <strong>existing buyers will retain full access to their content for the entire 45 days.</strong></li>
+            </ul>
+            
+            <h3>7.2 Community Memberships</h3>
+            <ul>
+                <li>Monthly subscriptions for uploading content to paid communities.</li>
+                <li>30-day access period with renewal required.</li>
+                <li>Access expires if subscription is not renewed.</li>
+                <li>If a leader finds your actions unfavorable to the spirit of a community, the leader of that community reserves the right to <strong>immediately remove any member, even if the community is paid.</strong> The kicked-out member will be <strong>solely responsible for any loss incurred, and the company will not be involved in any way.</strong></li>
+            </ul>
+            
+            <h3>7.3 Cancellation and Deletion</h3>
+            <ul>
+                <li>Users can cancel subscriptions at any time.</li>
+                <li>Creator Pass deletion requests require a 45-day waiting period (as detailed in 7.1).</li>
+                <li>Existing subscribers maintain access until their subscription expires.</li>
+                <li>When deleting paid content, no new users can purchase it, but <strong>existing buyers will have full access to it forever.</strong></li>
+            </ul>
+            
+            <hr>
+            
+            <h2>8. PRIVACY AND DATA COLLECTION</h2>
+            
+            <h3>8.1 Information We Collect</h3>
+            <ul>
+                <li>Account information (username, email, profile photo)</li>
+                <li>Payment and transaction data</li>
+                <li>Content metadata and viewing history</li>
+                <li>Device information and app usage analytics</li>
+                <li>Communication data (comments, messages)</li>
+            </ul>
+            
+            <h3>8.2 Use of Information</h3>
+            <ul>
+                <li>Provide and improve our services.</li>
+                <li>Process payments and transactions.</li>
+                <li>Send notifications and communications.</li>
+                <li>Analyze usage patterns and preferences.</li>
+                <li>Prevent fraud and ensure security.</li>
+            </ul>
+            
+            <h3>8.3 Data Sharing</h3>
+            <ul>
+                <li>We do not sell personal information to third parties.</li>
+                <li>Information may be shared with payment processors and service providers.</li>
+                <li>We may disclose information as required by law or to protect our rights.</li>
+            </ul>
+            
+            <h3>8.4 Data Security</h3>
+            <ul>
+                <li>We implement industry-standard security measures.</li>
+                <li>All payment processing is handled by certified payment processors.</li>
+                <li>We cannot guarantee absolute security of data transmission.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>9. INTELLECTUAL PROPERTY</h2>
+            
+            <h3>9.1 Platform Rights</h3>
+            <ul>
+                <li>Strmly owns all rights to the App, platform, and associated technology.</li>
+                <li>Our trademarks, logos, and brand elements are protected.</li>
+                <li>You may not copy, modify, or reverse engineer the App.</li>
+            </ul>
+            
+            <h3>9.2 DMCA and Copyright</h3>
+            <ul>
+                <li>We respect intellectual property rights.</li>
+                <li>Submit DMCA takedown notices for copyright infringement.</li>
+                <li>Repeat infringers will have their accounts terminated.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>10. PROHIBITED ACTIVITIES</h2>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Use the App for illegal purposes.</li>
+                <li>Circumvent payment systems or security measures.</li>
+                <li>Create fake accounts or impersonate others.</li>
+                <li>Spam, harass, or abuse other users.</li>
+                <li>Attempt to hack, decompile, or reverse engineer the App.</li>
+                <li>Use automated systems to access the App.</li>
+                <li>Violate any applicable laws or regulations.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>11. COMMUNITY GUIDELINES</h2>
+            
+            <h3>11.1 Respectful Interaction</h3>
+            <ul>
+                <li>Treat all users with respect and courtesy.</li>
+                <li>No harassment, bullying, or threatening behavior.</li>
+                <li>Respect diverse opinions and backgrounds.</li>
+            </ul>
+            
+            <h3>11.2 Content Standards</h3>
+            <ul>
+                <li>Keep content appropriate for the intended audience.</li>
+                <li>Respect community-specific rules and guidelines.</li>
+                <li>Report inappropriate content through proper channels.</li>
+                <li>If you are the <strong>sole leader of a community, you cannot leave the community without ensuring a successor.</strong> Either a co-founder of the community will take over by default, or you must manually elect a new leader before your departure is finalized.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>12. TERMINATION</h2>
+            
+            <h3>12.1 Termination by User</h3>
+            <ul>
+                <li>You may delete your account at any time.</li>
+                <li>Contact support for account deletion requests.</li>
+                <li>Some data may be retained for legal and business purposes.</li>
+                <li>Creator account deletion requests will <strong>only be permitted after 45 days from the request date.</strong> Within that period, their Creator Pass will be deactivated for new users. If they have communities, they must follow necessary procedures to select a new leader, and their individual content purchased by users from the creator will be available to them forever.</li>
+            </ul>
+            
+            <h3>12.2 Termination by Strmly</h3>
+            <ul>
+                <li>We may suspend or terminate accounts for Terms violations.</li>
+                <li>Repeated policy violations may result in permanent bans.</li>
+                <li>We reserve the right to refuse service to anyone.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>13. DISCLAIMERS AND LIMITATIONS</h2>
+            
+            <h3>13.1 Service Availability</h3>
+            <ul>
+                <li>The App is provided "as is" without warranties.</li>
+                <li>We do not guarantee uninterrupted service availability.</li>
+                <li>Features may be modified or discontinued at any time.</li>
+                <li>In case <strong>Google Play removes the App, or if there's an app crash or server crash, the company will take as much time as they deem necessary to resolve the issue.</strong></li>
+                <li>Any revenue (including Creator Pass and other earnings) accumulated during crashes or periods of app removal will be <strong>decided by the company, and nothing is guaranteed.</strong></li>
+            </ul>
+            
+            <h3>13.2 Limitation of Liability</h3>
+            <ul>
+                <li>Our liability is limited to the maximum extent permitted by law.</li>
+                <li>We are not liable for user-generated content or third-party actions.</li>
+                <li>Users are responsible for backing up their content.</li>
+                <li>The company has <strong>no liability if:</strong>
+                    <ul>
+                        <li>Someone steals videos/any other unfair practices within the users.</li>
+                        <li>Payments get stuck mid-transactions; users must contact their bank, not us.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <hr>
+            
+            <h2>14. INDEMNIFICATION</h2>
+            <p>You agree to indemnify and hold Strmly harmless from any claims, damages, or expenses arising from:</p>
+            <ul>
+                <li>Your use of the App.</li>
+                <li>Your violation of these Terms.</li>
+                <li>Your infringement of third-party rights.</li>
+                <li>Your uploaded content.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>15. GOVERNING LAW AND DISPUTES</h2>
+            
+            <h3>15.1 Applicable Law</h3>
+            <ul>
+                <li>These Terms are governed by the laws of India.</li>
+                <li>Disputes will be resolved in Indian courts.</li>
+            </ul>
+            
+            <h3>15.2 Dispute Resolution</h3>
+            <ul>
+                <li>Attempt to resolve disputes through direct communication.</li>
+                <li>Mediation may be required before litigation.</li>
+                <li>Class action lawsuits are prohibited.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>16. CHANGES TO TERMS</h2>
+            <ul>
+                <li>We may update these Terms at any time.</li>
+                <li>Significant changes will be communicated through the App.</li>
+                <li>Continued use constitutes acceptance of updated Terms.</li>
+                <li>Users who disagree with changes may terminate their accounts.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>17. CONTACT INFORMATION</h2>
+            <p>For questions about these Terms or the App, contact us at:</p>
+            <ul>
+                <li>Email: team@strmly.com</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>18. ADDITIONAL ANDROID-SPECIFIC TERMS</h2>
+            
+            <h3>18.1 Google Play Policies</h3>
+            <ul>
+                <li>This App complies with Google Play Developer Policies.</li>
+                <li>In-app purchases are processed through Google Play Billing (if applicable).</li>
+                <li>User reviews and ratings are subject to Google Play guidelines.</li>
+            </ul>
+            
+            <h3>18.2 Device Permissions</h3>
+            <ul>
+                <li>The App requests only necessary device permissions.</li>
+                <li>Camera and storage access for content creation and upload.</li>
+                <li>Network access for streaming and communication.</li>
+                <li>Notification permissions for updates and messages.</li>
+            </ul>
+            
+            <h3>18.3 Age-Appropriate Content</h3>
+            <ul>
+                <li>Content is moderated to ensure age-appropriate material.</li>
+                <li>Parental controls and content filtering are available.</li>
+                <li>Age verification required for monetization features.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>19. FINANCIAL TERMS AND COMPLIANCE</h2>
+            
+            <h3>19.1 Tax Responsibilities</h3>
+            <ul>
+                <li>Users are responsible for applicable taxes on earnings.</li>
+                <li>We may report income information as required by law.</li>
+                <li>Consult tax professionals for advice on earnings.</li>
+            </ul>
+            
+            <h3>19.2 Anti-Money Laundering</h3>
+            <ul>
+                <li>We comply with applicable AML regulations.</li>
+                <li>Suspicious transactions may be reported to authorities.</li>
+                <li>Enhanced verification may be required for high-value transactions.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>20. EFFECTIVE DATE AND ACKNOWLEDGMENT</h2>
+            <p>These Terms are effective as of <strong>July 30, 2025</strong> and apply to all users of the Strmly App. By using the App, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>
+            
+            <hr>
+            
+            <div class="acceptance">
+                <p><strong>ACCEPTANCE DECLARATION:</strong></p>
+                <p>"I have read and agree to the Strmly Terms and Conditions. I understand my rights and responsibilities as a user of this platform."</p>
+                <div class="acceptance-checkbox">
+                    <input type="checkbox" id="terms-agree"> 
+                    <label for="terms-agree">I agree to the Terms and Conditions</label>
+                </div>
+                <div class="acceptance-checkbox">
+                    <input type="checkbox" id="age-agree">
+                    <label for="age-agree">I am at least 13 years old (or have parental consent)</label>
+                </div>
+                <div class="acceptance-checkbox">
+                    <input type="checkbox" id="comm-agree">
+                    <label for="comm-agree">I agree to receive important service communications</label>
+                </div>
+                <div class="acceptance-buttons">
+                    <button class="accept-button">ACCEPT</button>
+                    <button class="decline-button">DECLINE</button>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>© 2025 STRMLY Technologies Pvt. Ltd. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
