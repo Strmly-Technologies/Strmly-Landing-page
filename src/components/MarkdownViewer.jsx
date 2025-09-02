@@ -82,7 +82,7 @@ const MarkdownViewer = () => {
             
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden flex items-center justify-center w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-700/30 hover:bg-white/10 transition-all"
+              className="md:hidden flex items-center justify-center w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-700/30 hover:bg-white/10 transition-all z-50"
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
             >
@@ -96,21 +96,51 @@ const MarkdownViewer = () => {
         </div>
         
         {/* Mobile Navigation Dropdown */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mb-6 bg-gray-900/90 backdrop-blur-md border border-gray-700/50 rounded-lg p-2 animate-fade-in-up">
-            <div className="py-2">
-              <Link to="/" className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors">
-                Home
-              </Link>
-              <Link to="/legal/privacy" className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/legal/terms" className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors">
-                Terms & Conditions
-              </Link>
+        <div 
+          className={`md:hidden fixed top-0 right-0 h-screen w-full z-40 ${
+            mobileMenuOpen ? 'block' : 'hidden'
+          }`}
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          {/* Solid black backdrop that covers the whole screen */}
+          <div className="absolute inset-0 bg-black"></div>
+
+          {/* Actual dropdown menu */}
+          <div 
+            className={`absolute top-[80px] right-4 w-[200px] transition-all duration-300 ease-in-out ${
+              mobileMenuOpen 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 -translate-y-4'
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="bg-black text-white border border-gray-700/50 rounded-lg shadow-lg overflow-hidden">
+              <div className="py-2 px-1">
+                <Link 
+                  to="/" 
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                  onClick={toggleMobileMenu}
+                >
+                  Home
+                </Link>
+                <Link 
+                  to="/legal/privacy" 
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                  onClick={toggleMobileMenu}
+                >
+                  Privacy Policy
+                </Link>
+                <Link 
+                  to="/legal/terms" 
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                  onClick={toggleMobileMenu}
+                >
+                  Terms & Conditions
+                </Link>
+              </div>
             </div>
           </div>
-        )}
+        </div>
         
         {/* Content */}
         <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 rounded-xl p-4 md:p-8 max-w-4xl mx-auto">

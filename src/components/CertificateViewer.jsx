@@ -1,4 +1,4 @@
-  import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
   import { Link, useParams, useNavigate } from 'react-router-dom';
   import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -57,9 +57,9 @@
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-black opacity-80"></div>
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 py-8 md:py-12">
+        <div className="relative z-10 container mx-auto px-4 py-6 md:py-8 max-w-4xl">
           {/* Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 md:mb-8 space-y-3 md:space-y-0">
             <Link to="/" className="flex items-center space-x-2 md:space-x-4 group">
               <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-white/5 backdrop-blur-sm rounded-xl border border-gray-700/30 group-hover:border-gray-500/50 transition-all duration-300">
                 <img 
@@ -80,7 +80,7 @@
               
               {/* Mobile Menu Button */}
               <button 
-                className="md:hidden flex items-center justify-center w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-700/30 hover:bg-white/10 transition-all"
+                className="md:hidden flex items-center justify-center w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg border border-gray-700/30 hover:bg-white/10 transition-all z-50"
                 onClick={toggleMobileMenu}
                 aria-label="Toggle mobile menu"
               >
@@ -94,31 +94,61 @@
           </div>
           
           {/* Mobile Navigation Dropdown */}
-          {mobileMenuOpen && (
-            <div className="md:hidden mb-6 bg-gray-900/90 backdrop-blur-md border border-gray-700/50 rounded-lg p-2 animate-fade-in-up">
-              <div className="py-2">
-                <Link to="/" className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors">
-                  Home
-                </Link>
-                <Link to="/certificate/msme" className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors">
-                  MSME Certificate
-                </Link>
-                <Link to="/certificate/dpiit" className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors">
-                  DPIIT Certificate
-                </Link>
+          <div 
+            className={`md:hidden fixed top-0 right-0 h-screen w-full z-40 ${
+              mobileMenuOpen ? 'block' : 'hidden'
+            }`}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            {/* Solid black backdrop that covers the whole screen */}
+            <div className="absolute inset-0 bg-black"></div>
+
+            {/* Actual dropdown menu */}
+            <div 
+              className={`absolute top-[80px] right-4 w-[200px] transition-all duration-300 ease-in-out ${
+                mobileMenuOpen 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 -translate-y-4'
+              }`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="bg-black text-white border border-gray-700/50 rounded-lg shadow-lg overflow-hidden">
+                <div className="py-2 px-1">
+                  <Link 
+                    to="/" 
+                    className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                    onClick={toggleMobileMenu}
+                  >
+                    Home
+                  </Link>
+                  <Link 
+                    to="/certificate/msme" 
+                    className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                    onClick={toggleMobileMenu}
+                  >
+                    MSME Certificate
+                  </Link>
+                  <Link 
+                    to="/certificate/dpiit" 
+                    className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                    onClick={toggleMobileMenu}
+                  >
+                    DPIIT Certificate
+                  </Link>
+                </div>
               </div>
             </div>
-          )}
+          </div>
           
           {/* Certificate Content */}
-          <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 rounded-xl p-4 md:p-8 max-w-5xl mx-auto">
-            <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 pb-4 border-b border-gray-700/50">
+          <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 rounded-xl p-4 md:p-6 max-w-4xl mx-auto">
+            <h1 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 pb-3 border-b border-gray-700/50">
               {type === 'msme' ? 'MSME Certificate' : 'DPIIT Certificate'}
             </h1>
             
             {images.length > 0 ? (
               <div className="flex flex-col items-center">
-                <div className="relative mb-6 max-w-full">
+                <div className="relative mb-4 max-w-full">
                   <img 
                     src={images[currentIndex]} 
                     alt={`${type === 'msme' ? 'MSME' : 'DPIIT'} Certificate`}
@@ -163,7 +193,7 @@
                   </div>
                 )}
                 
-                <p className="text-gray-400 mt-6 text-center text-sm md:text-base">
+                <p className="text-gray-400 mt-4 text-center text-xs md:text-sm">
                   This is an official {type === 'msme' ? 'MSME' : 'DPIIT'} certificate issued to STRMLY Technologies Pvt. Ltd.
                 </p>
               </div>
@@ -175,7 +205,7 @@
           </div>
           
           {/* Footer */}
-          <div className="text-center text-gray-500 text-xs md:text-sm mt-8 md:mt-12">
+          <div className="text-center text-gray-500 text-xs mt-6 md:mt-8">
             © {new Date().getFullYear()} STRMLY. All rights reserved.
           </div>
         </div>
