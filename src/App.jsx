@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import { FaGooglePlay, FaInstagram, FaLinkedinIn, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
+import { FaGooglePlay, FaInstagram, FaLinkedinIn, FaEnvelope, FaBars, FaTimes, FaApple } from 'react-icons/fa';
 import MarkdownViewer from './components/MarkdownViewer';
 import CertificateViewer from './components/CertificateViewer';
 
@@ -8,6 +8,7 @@ import CertificateViewer from './components/CertificateViewer';
 const StrmlyLanding = () => {
   const [mounted, setMounted] = useState(false);
   const [showLaunchModal, setShowLaunchModal] = useState(false);
+  const [showComingSoonModal, setShowComingSoonModal] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -19,10 +20,10 @@ const StrmlyLanding = () => {
   const handleLinkClick = (e, linkType) => {
     // Prevent default link behavior
     e.preventDefault();
-    
+
     // Close mobile menu when navigating
     setMobileMenuOpen(false);
-    
+
     // Navigate to appropriate routes for privacy and terms links
     if (linkType === 'Privacy Policy' || linkType === 'Privacy') {
       navigate('/legal/privacy');
@@ -39,6 +40,10 @@ const StrmlyLanding = () => {
     } else if (linkType === 'DPIIT') {
       navigate('/certificate/dpiit');
     }
+    else if(linkType === 'AppStore') {
+      // Show coming soon modal for App Store
+      setShowComingSoonModal(true);
+    }
     else if(linkType==='Download'){
       window.open('https://play.google.com/store/apps/details?id=com.anonymous.strmly');
     } else {
@@ -52,6 +57,22 @@ const StrmlyLanding = () => {
     setShowLaunchModal(false);
   };
 
+  const closeComingSoonModal = () => {
+    setShowComingSoonModal(false);
+  };
+
+  // Prevent background scroll while coming-soon modal is open
+  useEffect(() => {
+    if (showComingSoonModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showComingSoonModal]);
+  
   // Toggle mobile menu
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -186,8 +207,9 @@ const StrmlyLanding = () => {
           </p>
         </div>
 
-        {/* Responsive Google Play Button */}
-        <div className={`mb-16 md:mb-24 ${mounted ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
+        {/* Responsive App Store + Google Play Buttons */}
+        <div className={`mb-16 md:mb-24 flex flex-col sm:flex-row gap-4 justify-center ${mounted ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
+          {/* Google Play Button */}
           <button 
             className="group flex items-center space-x-3 md:space-x-5 px-6 md:px-10 py-4 md:py-5 bg-gray-900 text-white rounded-xl border border-gray-700/50 hover:border-gray-500 transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30"
             onClick={(e) => handleLinkClick(e, 'Download')}
@@ -198,6 +220,23 @@ const StrmlyLanding = () => {
             <div className="text-left">
               <div className="text-xs md:text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Get it on</div>
               <div className="text-lg md:text-xl font-bold text-white">Google Play</div>
+            </div>
+            <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-500 group-hover:text-gray-300 group-hover:translate-x-1 transition-all duration-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </button>
+
+          {/* App Store Button */}
+          <button 
+            className="group flex items-center space-x-3 md:space-x-5 px-6 md:px-10 py-4 md:py-5 bg-gray-900 text-white rounded-xl border border-gray-700/50 hover:border-gray-500 transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30"
+            onClick={(e) => handleLinkClick(e, 'AppStore')}
+          >
+            <div className="p-2 md:p-2.5 bg-black rounded-lg group-hover:bg-gray-800 transition-colors duration-300">
+              <FaApple className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            </div>
+            <div className="text-left">
+              <div className="text-xs md:text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Get it on</div>
+              <div className="text-lg md:text-xl font-bold text-white">App Store</div>
             </div>
             <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-500 group-hover:text-gray-300 group-hover:translate-x-1 transition-all duration-300" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -295,7 +334,7 @@ const StrmlyLanding = () => {
             <div>
               <h3 className="text-sm font-bold uppercase mb-4 md:mb-6 text-gray-400">Legal</h3>
               <ul className="space-y-2 md:space-y-3">
-                {['Terms of Service', 'Privacy Policy', 'Cookies', 'Data Processing'].map(item => (
+                {['Terms of Service', 'Privacy Policy', 'Cookies', 'Data Processing'].map (item => (
                   <li key={item}>
                     <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm" onClick={(e) => handleLinkClick(e, item)}>{item}</a>
                   </li>
@@ -377,7 +416,7 @@ const StrmlyLanding = () => {
               </p>
               
               {/* Enhanced Play Store Button matching theme */}
-              <div className="mb-6 md:mb-8">
+              <div className="mb-6 md:mb-8 flex gap-4 justify-center">
                 <a 
                   href="https://play.google.com/store/apps/details?id=com.anonymous.strmly" 
                   target="_blank" 
@@ -395,6 +434,19 @@ const StrmlyLanding = () => {
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </a>
+
+                <button
+                  onClick={(e) => handleLinkClick(e, 'AppStore')}
+                  className="group inline-flex items-center space-x-3 md:space-x-4 px-6 md:px-8 py-3 md:py-4 bg-gray-900 text-white rounded-xl border border-gray-700/50 hover:border-gray-500 transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30"
+                >
+                  <div className="p-1.5 md:p-2 bg-black rounded-lg group-hover:bg-gray-800 transition-colors duration-300">
+                    <FaApple className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Download on</div>
+                    <div className="text-sm md:text-lg font-bold text-white">App Store</div>
+                  </div>
+                </button>
               </div>
               
               {/* Enhanced dismiss button */}
@@ -405,6 +457,37 @@ const StrmlyLanding = () => {
                 Continue browsing →
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Coming Soon Modal for App Store */}
+      {showComingSoonModal && (
+        <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 pointer-events-auto">
+          {/* Backdrop: stronger blur + semi-opaque layer */}
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-md"
+            onClick={closeComingSoonModal}
+            aria-hidden="true"
+          />
+          
+          <div className="relative z-[100000] bg-gray-900/95 border border-gray-700/50 rounded-2xl p-6 max-w-sm w-full text-center shadow-2xl">
+            <button
+              className="absolute top-3 right-3 text-gray-400 hover:text-white"
+              onClick={closeComingSoonModal}
+              aria-label="Close"
+            >
+              <FaTimes />
+            </button>
+
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-12 h-12 flex items-center justify-center bg-white/5 rounded-lg">
+                <FaApple className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            <h3 className="text-xl font-bold mb-2">Coming Soon</h3>
+            <p className="text-sm text-gray-300 mb-4">We're working on the iOS release. The App Store version will be available soon.</p>
+            <button onClick={closeComingSoonModal} className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700">Close</button>
           </div>
         </div>
       )}
