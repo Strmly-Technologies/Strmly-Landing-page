@@ -29,7 +29,10 @@ const StrmlyLanding = () => {
       navigate('/legal/privacy');
     } else if (linkType === 'Terms of Service' || linkType === 'Terms') {
       navigate('/legal/terms');
-    } else if (linkType === 'Instagram') {
+    }else if( linkType==='Child Safety' || linkType==='Child Safety'){
+      navigate('/legal/child-safety');
+    }
+    else if (linkType === 'Instagram') {
       window.open('https://www.instagram.com/strmly_', '_blank');
     } else if (linkType === 'LinkedIn') {
       window.open('https://www.linkedin.com/company/strmly/posts/?feedView=all', '_blank');
@@ -123,7 +126,7 @@ const StrmlyLanding = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-2">
-            {['Sign-up', 'Log-in', 'Terms', 'Privacy'].map((item, index) => (
+            {['Sign-up', 'Log-in', 'Terms', 'Privacy', 'Child Safety'].map((item, index) => (
               <button
                 key={item}
                 onClick={(e) => handleLinkClick(e, item)}
@@ -171,7 +174,7 @@ const StrmlyLanding = () => {
         >
           <div className="bg-black opacity-100 text-white backdrop-blur-md border border-gray-700/50 rounded-lg shadow-lg overflow-hidden">
             <div className="py-2 px-1">
-              {['Sign-up', 'Log-in', 'Terms', 'Privacy'].map((item) => (
+              {['Sign-up', 'Log-in', 'Terms', 'Privacy, Child Safety'].map((item) => (
                 <button
                   key={item}
                   onClick={(e) => {
@@ -334,7 +337,7 @@ const StrmlyLanding = () => {
             <div>
               <h3 className="text-sm font-bold uppercase mb-4 md:mb-6 text-gray-400">Legal</h3>
               <ul className="space-y-2 md:space-y-3">
-                {['Terms of Service', 'Privacy Policy', 'Cookies', 'Data Processing'].map (item => (
+                {['Terms of Service', 'Privacy Policy','Child Safety' ,'Cookies', 'Data Processing'].map (item => (
                   <li key={item}>
                     <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm" onClick={(e) => handleLinkClick(e, item)}>{item}</a>
                   </li>

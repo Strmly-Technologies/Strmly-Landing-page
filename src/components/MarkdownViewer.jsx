@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { FaBars, FaTimes } from 'react-icons/fa';
 // Import the markdown content as strings
-import { privacyPolicyContent, termsAndConditionsContent } from '../utils/markdownContent';
+import { privacyPolicyContent, termsAndConditionsContent, childSafetyContent } from '../utils/markdownContent';
 
 const MarkdownViewer = () => {
   const [content, setContent] = useState('');
@@ -24,6 +24,11 @@ const MarkdownViewer = () => {
         } else if (type === 'terms') {
           title = 'Terms and Conditions';
           setContent(termsAndConditionsContent);
+        }else if(type === 'child-safety'){
+          title = 'Child Safety Standards';
+          setContent(childSafetyContent);
+        } else {
+          throw new Error('Invalid document type');
         }
         
         document.title = `STRMLY | ${title}`;
