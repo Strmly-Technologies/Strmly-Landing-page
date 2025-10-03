@@ -172,18 +172,26 @@ Reports must include:
 ### *Repeat Infringers*
 - Accounts that repeatedly violate this policy will be suspended or terminated.
 ---  
+## **14. Child Safety and CSAM**
 
-## **14. Changes to This Policy**
+STRMLY strictly prohibits **Child Sexual Abuse Material (CSAM)** and **Child Sexual Abuse and Exploitation (CSAE)**. We maintain a reporting and moderation process and will remove and report any content that violates this prohibition.  
+
+**Child Safety Standards:** [https://www.strmly.com/legal/child-safety](https://www.strmly.com/legal/child-safety)
+
+---
+
+
+## **15. Changes to This Policy**
 
 We may update this Privacy Policy from time to time. If material changes are made, we will notify you via app notification or email. The "Last updated" date at the top reflects the latest version.
 
 ---
 
-## **15. Contact Us**
+## **16. Contact Us**
 
 If you have any questions or complaints regarding this Privacy Policy or your data, please contact us at:
 
-**Email:** team@strmly.com`;
+**Email:** team@strmly.com `;
 
 export const termsAndConditionsContent = `---
 
@@ -501,3 +509,30 @@ These Terms are effective as of **July 30, 2025** and apply to all users of the 
 [ACCEPT] [DECLINE]
 
 ---`;
+
+export const childSafetyContent = `##  **Strmly Child Safety Standards**
+
+### **1. Zero Tolerance for Child Sexual Abuse Material (CSAM/CSAE)**
+- -Strmly strictly prohibits the creation, sharing, or promotion of CSAM/CSAE.
+- -Any user found violating this policy will have their account terminated and content removed immediately.
+
+### **2. Content Monitoring & Removal**
+- -Strmly uses a combination of automated tools and human review to detect and remove harmful content.
+- -Reported or flagged material is reviewed promptly by our moderation team.
+
+### **3. User Reporting Mechanism**
+- -Users can report any harmful or suspicious content directly within the app.
+- -All reports are prioritized, and immediate action is taken when child safety is at risk.
+
+### **4. Collaboration with Authorities**
+- -Strmly cooperates with law enforcement and relevant child protection agencies.
+- -Verified reports of CSAM/CSAE will be escalated and reported to appropriate authorities in accordance with applicable laws.
+
+### **5. Child Safety Point of Contact**
+- -We have designated a Child Safety Officer to handle CSAM/CSAE matters.
+- **Contact:** [team@strmly.com](mailto:team@strmly.com) (Trust & Safety Team)
+
+### **6. User Responsibility**
+- -Users are reminded that uploading or sharing harmful content violates Strmly’s policies and local laws.
+- -Strmly reserves the right to suspend or terminate any account engaging in such activities.
+`
