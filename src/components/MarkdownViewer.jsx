@@ -150,7 +150,7 @@ const MarkdownViewer = () => {
         {/* Content */}
         <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 rounded-xl p-4 md:p-8 max-w-4xl mx-auto">
           <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 pb-4 border-b border-gray-700/50">
-            {type === 'privacy' ? 'Privacy Policy' : 'Terms and Conditions'}
+            {type === 'privacy' ? 'Privacy Policy' : type === 'terms' ? 'Terms and Conditions' : type==='child-safety' ? 'Child Safety Standards' : 'Document'}
           </h1>
           
           {isLoading ? (
