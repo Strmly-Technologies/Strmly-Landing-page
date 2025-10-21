@@ -44,8 +44,9 @@ const StrmlyLanding = () => {
       navigate('/certificate/dpiit');
     }
     else if(linkType === 'AppStore') {
-      // Show coming soon modal for App Store
-      setShowComingSoonModal(true);
+      // // Show coming soon modal for App Store
+      // setShowComingSoonModal(true);
+      window.open('https://apps.apple.com/in/app/strmly-streaming-platform/id6752884668');
     }
     else if(linkType==='Download'){
       window.open('https://play.google.com/store/apps/details?id=com.anonymous.strmly');
