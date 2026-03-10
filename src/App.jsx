@@ -218,7 +218,7 @@ const StrmlyLanding = () => {
   onClick={() => window.open('https://forms.gle/1E3ALe4Dsdx2AnuYA', '_blank')}
 >
   <div className="text-left">
-    <div className="text-xs md:text-sm text-blue-100">Schedule</div>
+    <div className="text-xs md:text-sm text-gray-400">Schedule</div>
     <div className="text-lg md:text-xl font-bold text-white">Book a Call</div>
   </div>
 </button>
