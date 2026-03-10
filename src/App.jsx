@@ -319,7 +319,7 @@ const StrmlyLanding = () => {
                 India's first blockchain based social media platform. Building the future of decentralized content sharing.
               </p>
               <div className="flex space-x-4 justify-start">
-                <a href="https://www.instagram.com/strmly_" className="w-10 h-10 rounded-full bg-white/5 border border-gray-700/30 flex items-center justify-center hover:bg-white/10 hover:border-gray-500/50 transition-all duration-300" >
+                <a href="https://www.instagram.com/strmlytechnologies/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-gray-700/30 flex items-center justify-center hover:bg-white/10 hover:border-gray-500/50 transition-all duration-300">
                   <FaInstagram className="text-gray-400 hover:text-white transition-colors" />
                 </a>
                 <a href="https://www.linkedin.com/company/strmly/posts/?feedView=all" className="w-10 h-10 rounded-full bg-white/5 border border-gray-700/30 flex items-center justify-center hover:bg-white/10 hover:border-gray-500/50 transition-all duration-300" >
