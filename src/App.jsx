@@ -363,10 +363,10 @@ const StrmlyLanding = () => {
                   <a href="#" onClick={(e) => handleLinkClick(e, 'Email')}>team@strmly.com</a>
                 </li>
                 <li>
-                  <a href="#" onClick={(e) => handleLinkClick(e, 'Phone')}>+91 98765 43210</a>
+                 <a href="#" onClick={(e) => handleLinkClick(e, 'Phone')}>+91 6205850775</a>
                 </li>
                 <li>
-                  <a href="#" onClick={(e) => handleLinkClick(e, 'Location')}>Bengaluru, India</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, 'Location')}>New Delhi, India</a>
                 </li>
               </ul>
             </div>
