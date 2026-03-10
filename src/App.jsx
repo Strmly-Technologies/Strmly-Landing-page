@@ -206,8 +206,8 @@ const StrmlyLanding = () => {
 </h1>
           
           <p className={`text-base md:text-xl text-gray-400 mt-6 md:mt-8 max-w-2xl mx-auto leading-relaxed px-4 ${mounted ? 'opacity-100' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-            Experience the future of social networking with blockchain technology, 
-            complete transparency, and user-owned content.
+         We help brands scale through UGC videos, influencer collaborations, 
+         and social media growth strategies.
           </p>
         </div>
 
