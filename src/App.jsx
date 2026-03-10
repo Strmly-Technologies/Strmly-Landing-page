@@ -127,7 +127,7 @@ const StrmlyLanding = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-2">
-            {['Sign-up', 'Log-in', 'Terms', 'Privacy', 'Child Safety'].map((item, index) => (
+            {['Terms', 'Privacy', 'Child Safety'].map((item, index) => (
               <button
                 key={item}
                 onClick={(e) => handleLinkClick(e, item)}
