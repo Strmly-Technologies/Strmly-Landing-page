@@ -197,13 +197,13 @@ const StrmlyLanding = () => {
         {/* Hero Text - Responsive Typography */}
         <div className={`text-center max-w-5xl mx-auto mb-12 md:mb-16 ${mounted ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight mb-6 md:mb-8">
-            <span className="block text-3xl sm:text-4xl md:text-7xl text-white leading-tight">
-              India's first <span className="text-gray-400">blockchain</span> based
-            </span>
-            <span className="block text-white mt-2 text-3xl sm:text-4xl md:text-7xl leading-tight">
-              social media platform
-            </span>
-          </h1>
+  <span className="block text-white">
+    Grow Your Brand Faster
+  </span>
+  <span className="block text-gray-400 mt-2">
+    With High-Performing Social Media Content
+  </span>
+</h1>
           
           <p className={`text-base md:text-xl text-gray-400 mt-6 md:mt-8 max-w-2xl mx-auto leading-relaxed px-4 ${mounted ? 'opacity-100' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
             Experience the future of social networking with blockchain technology, 
