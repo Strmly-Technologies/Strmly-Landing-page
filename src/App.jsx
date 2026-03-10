@@ -175,7 +175,7 @@ const StrmlyLanding = () => {
         >
           <div className="bg-black opacity-100 text-white backdrop-blur-md border border-gray-700/50 rounded-lg shadow-lg overflow-hidden">
             <div className="py-2 px-1">
-              {['Sign-up', 'Log-in', 'Terms', 'Privacy, Child Safety'].map((item) => (
+              {['Terms', 'Privacy, Child Safety'].map((item) => (
                 <button
                   key={item}
                   onClick={(e) => {
