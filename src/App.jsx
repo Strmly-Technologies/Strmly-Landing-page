@@ -213,6 +213,15 @@ const StrmlyLanding = () => {
 
         {/* Responsive App Store + Google Play Buttons */}
         <div className={`mb-16 md:mb-24 flex flex-col sm:flex-row gap-4 justify-center ${mounted ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
+       <button 
+  className="group flex items-center space-x-3 md:space-x-5 px-6 md:px-10 py-4 md:py-5 bg-blue-600 text-white rounded-xl border border-blue-500 hover:bg-blue-500 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl"
+  onClick={() => window.open('https://forms.gle/1E3ALe4Dsdx2AnuYA', '_blank')}
+>
+  <div className="text-left">
+    <div className="text-xs md:text-sm text-blue-100">Schedule</div>
+    <div className="text-lg md:text-xl font-bold text-white">Book a Call</div>
+  </div>
+</button>
           {/* Google Play Button */}
           <button 
             className="group flex items-center space-x-3 md:space-x-5 px-6 md:px-10 py-4 md:py-5 bg-gray-900 text-white rounded-xl border border-gray-700/50 hover:border-gray-500 transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30"
